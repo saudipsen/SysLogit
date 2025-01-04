@@ -1,8 +1,10 @@
-﻿using System;
+﻿using SysLogit.Unity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Unity;
 
 namespace SysLogit
 {
@@ -16,7 +18,15 @@ namespace SysLogit
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+
+            // Initialize Unity container
+            var container = new UnityContainer();
+            UnityConfig.RegisterComponents();
+
+            // Resolve MainForm with dependencies
+            var mainForm = container.Resolve<Main>();
+
+            Application.Run(mainForm);
         }
     }
 }

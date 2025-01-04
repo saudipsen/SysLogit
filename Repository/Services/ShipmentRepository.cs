@@ -1,4 +1,5 @@
 ﻿using SysLogit.Models;
+using SysLogit.Repository.Contracts;
 using SysLogit.Repository.Contracts.SysLogit.Repository.Contracts;
 using SysLogit.Utility;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace SysLogit.Repository.Services
 {
-    public class ShipmentRepository : IRepository<Shipment>
+    public class ShipmentRepository : IShipmentRepository
     {
         private readonly AppDbContext _context;
 

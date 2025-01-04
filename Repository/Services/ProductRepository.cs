@@ -10,13 +10,13 @@ using SysLogit.Utility;
 
 namespace SysLogit.Repository.Services
 {
-    public class ProductRepository : IRepository<Product>
+    public class ProductRepository : IProductRepository
     {
         private readonly AppDbContext _context;
 
         public ProductRepository(AppDbContext context)
         {
-            _context = context;
+            _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
         public Response<IEnumerable<Product>> GetAll()

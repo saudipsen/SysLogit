@@ -1,5 +1,6 @@
 ﻿using SysLogit.Business.Contracts;
 using SysLogit.Models;
+using SysLogit.Repository.Contracts;
 using SysLogit.Repository.Contracts.SysLogit.Repository.Contracts;
 using SysLogit.Utility;
 using System;
@@ -12,9 +13,9 @@ namespace SysLogit.Business.Services
 {
     public class ShipmentService : IShipmentService
     {
-        private readonly IRepository<Shipment> _repository;
+        private readonly IShipmentRepository _repository;
 
-        public ShipmentService(IRepository<Shipment> repository)
+        public ShipmentService(IShipmentRepository repository)
         {
             _repository = repository;
         }
@@ -29,14 +30,14 @@ namespace SysLogit.Business.Services
             return _repository.GetById(id);
         }
 
-        public Response<string> AddShipment(Shipment Shipment)
+        public Response<string> AddShipment(Shipment shipment)
         {
-            return _repository.Add(Shipment);
+            return _repository.Add(shipment);
         }
 
-        public Response<string> UpdateShipment(Shipment Shipment)
+        public Response<string> UpdateShipment(Shipment shipment)
         {
-            return _repository.Update(Shipment);
+            return _repository.Update(shipment);
         }
 
         public Response<string> DeleteShipment(int id)

@@ -69,6 +69,8 @@
     <Compile Include="Business\Contracts\IShipmentService.cs" />
     <Compile Include="Business\Services\ProductService.cs" />
     <Compile Include="Business\Services\ShipmentService.cs" />
+    <Compile Include="Repository\Contracts\IProductRepository.cs" />
+    <Compile Include="Repository\Contracts\IShipmentRepository.cs" />
     <Compile Include="UI\Main.cs">
       <SubType>Form</SubType>
     </Compile>

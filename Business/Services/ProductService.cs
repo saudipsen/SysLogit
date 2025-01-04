@@ -1,5 +1,6 @@
 ﻿using SysLogit.Business.Contracts;
 using SysLogit.Models;
+using SysLogit.Repository.Contracts;
 using SysLogit.Repository.Contracts.SysLogit.Repository.Contracts;
 using SysLogit.Utility;
 using System;
@@ -12,9 +13,9 @@ namespace SysLogit.Business.Services
 {
     public class ProductService : IProductService
     {
-        private readonly IRepository<Product> _repository;
+        public readonly IProductRepository _repository;
 
-        public ProductService(IRepository<Product> repository)
+        public ProductService(IProductRepository repository)
         {
             _repository = repository;
         }

@@ -38,11 +38,12 @@
             this.lblProductId = new System.Windows.Forms.Label();
             this.txtProductId = new System.Windows.Forms.TextBox();
             this.panelProductEntry = new System.Windows.Forms.Panel();
-            this.txtProductName = new System.Windows.Forms.TextBox();
-            this.lblProductName = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.txtProductPrice = new System.Windows.Forms.TextBox();
             this.lblProductPrice = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtProductName = new System.Windows.Forms.TextBox();
+            this.lblProductName = new System.Windows.Forms.Label();
+            this.btnProductLoadData = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgInventory)).BeginInit();
             this.panelProductEntry.SuspendLayout();
             this.SuspendLayout();
@@ -91,7 +92,7 @@
             this.btnProductAdd.BackColor = System.Drawing.Color.SkyBlue;
             this.btnProductAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProductAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductAdd.Location = new System.Drawing.Point(30, 47);
+            this.btnProductAdd.Location = new System.Drawing.Point(161, 37);
             this.btnProductAdd.Name = "btnProductAdd";
             this.btnProductAdd.Size = new System.Drawing.Size(83, 43);
             this.btnProductAdd.TabIndex = 5;
@@ -104,7 +105,7 @@
             this.btnProductUpdate.BackColor = System.Drawing.Color.SkyBlue;
             this.btnProductUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProductUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductUpdate.Location = new System.Drawing.Point(139, 47);
+            this.btnProductUpdate.Location = new System.Drawing.Point(270, 37);
             this.btnProductUpdate.Name = "btnProductUpdate";
             this.btnProductUpdate.Size = new System.Drawing.Size(83, 43);
             this.btnProductUpdate.TabIndex = 6;
@@ -116,7 +117,7 @@
             this.btnProductDelete.BackColor = System.Drawing.Color.SkyBlue;
             this.btnProductDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProductDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductDelete.Location = new System.Drawing.Point(263, 47);
+            this.btnProductDelete.Location = new System.Drawing.Point(394, 37);
             this.btnProductDelete.Name = "btnProductDelete";
             this.btnProductDelete.Size = new System.Drawing.Size(83, 43);
             this.btnProductDelete.TabIndex = 7;
@@ -155,22 +156,20 @@
             this.panelProductEntry.TabIndex = 8;
             this.panelProductEntry.Visible = false;
             // 
-            // txtProductName
+            // button1
             // 
-            this.txtProductName.Location = new System.Drawing.Point(137, 81);
-            this.txtProductName.Name = "txtProductName";
-            this.txtProductName.Size = new System.Drawing.Size(207, 22);
-            this.txtProductName.TabIndex = 3;
-            // 
-            // lblProductName
-            // 
-            this.lblProductName.AutoSize = true;
-            this.lblProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductName.Location = new System.Drawing.Point(11, 81);
-            this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Size = new System.Drawing.Size(105, 16);
-            this.lblProductName.TabIndex = 2;
-            this.lblProductName.Text = "Product Name";
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Enabled = false;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(191, 203);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(153, 46);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Save";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // txtProductPrice
             // 
@@ -189,26 +188,42 @@
             this.lblProductPrice.TabIndex = 6;
             this.lblProductPrice.Text = "Price";
             // 
-            // button1
+            // txtProductName
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Enabled = false;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(191, 203);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 46);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = false;
+            this.txtProductName.Location = new System.Drawing.Point(137, 81);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(207, 22);
+            this.txtProductName.TabIndex = 3;
+            // 
+            // lblProductName
+            // 
+            this.lblProductName.AutoSize = true;
+            this.lblProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductName.Location = new System.Drawing.Point(11, 81);
+            this.lblProductName.Name = "lblProductName";
+            this.lblProductName.Size = new System.Drawing.Size(105, 16);
+            this.lblProductName.TabIndex = 2;
+            this.lblProductName.Text = "Product Name";
+            // 
+            // btnProductLoadData
+            // 
+            this.btnProductLoadData.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnProductLoadData.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProductLoadData.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductLoadData.Location = new System.Drawing.Point(29, 37);
+            this.btnProductLoadData.Name = "btnProductLoadData";
+            this.btnProductLoadData.Size = new System.Drawing.Size(102, 43);
+            this.btnProductLoadData.TabIndex = 9;
+            this.btnProductLoadData.Text = "Load Data";
+            this.btnProductLoadData.UseVisualStyleBackColor = false;
+            this.btnProductLoadData.Click += new System.EventHandler(this.btnProductLoadData_Click);
             // 
             // ManageInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1326, 749);
+            this.Controls.Add(this.btnProductLoadData);
             this.Controls.Add(this.panelProductEntry);
             this.Controls.Add(this.btnProductDelete);
             this.Controls.Add(this.btnProductUpdate);
@@ -219,6 +234,7 @@
             this.Controls.Add(this.dgInventory);
             this.Name = "ManageInventory";
             this.Text = "ManageInventory";
+            this.Load += new System.EventHandler(this.ManageInventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgInventory)).EndInit();
             this.panelProductEntry.ResumeLayout(false);
             this.panelProductEntry.PerformLayout();
@@ -244,5 +260,6 @@
         private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.Label lblProductName;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnProductLoadData;
     }
 }

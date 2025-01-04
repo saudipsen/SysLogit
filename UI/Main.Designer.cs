@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuMain = new System.Windows.Forms.ToolStripMenuItem();
             this.viewProductsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageShipmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,33 +52,33 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
+            this.toolStripMenuMain});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(873, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // toolStripMenuItem1
+            // toolStripMenuMain
             // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuMain.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewProductsToolStripMenuItem,
             this.manageShipmentsToolStripMenuItem});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(60, 26);
-            this.toolStripMenuItem1.Text = "Menu";
+            this.toolStripMenuMain.Name = "toolStripMenuMain";
+            this.toolStripMenuMain.Size = new System.Drawing.Size(60, 24);
+            this.toolStripMenuMain.Text = "Menu";
             // 
             // viewProductsToolStripMenuItem
             // 
             this.viewProductsToolStripMenuItem.Name = "viewProductsToolStripMenuItem";
-            this.viewProductsToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
+            this.viewProductsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.viewProductsToolStripMenuItem.Text = "View Products";
             this.viewProductsToolStripMenuItem.Click += new System.EventHandler(this.viewProductsToolStripMenuItem_Click);
             // 
             // manageShipmentsToolStripMenuItem
             // 
             this.manageShipmentsToolStripMenuItem.Name = "manageShipmentsToolStripMenuItem";
-            this.manageShipmentsToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
+            this.manageShipmentsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.manageShipmentsToolStripMenuItem.Text = "Manage Shipments";
             this.manageShipmentsToolStripMenuItem.Click += new System.EventHandler(this.manageShipmentsToolStripMenuItem_Click);
             // 
@@ -182,7 +182,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(865, 536);
+            this.tabPage2.Size = new System.Drawing.Size(865, 538);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Settings";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -213,7 +213,7 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuMain;
         private System.Windows.Forms.ToolStripMenuItem viewProductsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageShipmentsToolStripMenuItem;
         private System.Windows.Forms.Label label1;
