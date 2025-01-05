@@ -20,8 +20,9 @@ namespace SysLogit
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Initialize Unity container
-            var container = new UnityContainer();
-            UnityConfig.RegisterComponents();
+            //var container = new UnityContainer();
+            //UnityConfig.RegisterComponents();
+            var container = UnityConfig.GetConfiguredContainer();
 
             // Resolve MainForm with dependencies
             var mainForm = container.Resolve<Main>();

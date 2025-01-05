@@ -46,6 +46,8 @@
             this.lblProductIdLookup = new System.Windows.Forms.Label();
             this.lblShipmentAssign = new System.Windows.Forms.Label();
             this.btnCreateShipment = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgShipment)).BeginInit();
             this.panelShipment.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +63,7 @@
             this.btnShipmentSearch.TabIndex = 7;
             this.btnShipmentSearch.Text = "Search";
             this.btnShipmentSearch.UseVisualStyleBackColor = false;
+            this.btnShipmentSearch.Click += new System.EventHandler(this.btnShipmentSearch_Click);
             // 
             // txtShipmentSearch
             // 
@@ -87,11 +90,13 @@
             this.dgShipment.Name = "dgShipment";
             this.dgShipment.RowHeadersWidth = 51;
             this.dgShipment.RowTemplate.Height = 24;
-            this.dgShipment.Size = new System.Drawing.Size(806, 522);
+            this.dgShipment.Size = new System.Drawing.Size(806, 137);
             this.dgShipment.TabIndex = 4;
             // 
             // panelShipment
             // 
+            this.panelShipment.Controls.Add(this.txtQuantity);
+            this.panelShipment.Controls.Add(this.label1);
             this.panelShipment.Controls.Add(this.btnSubmitShipment);
             this.panelShipment.Controls.Add(this.lblShipmentConsignment);
             this.panelShipment.Controls.Add(this.cmbShipmentConsignment);
@@ -115,6 +120,7 @@
             // 
             this.btnSubmitShipment.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnSubmitShipment.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSubmitShipment.Enabled = false;
             this.btnSubmitShipment.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSubmitShipment.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmitShipment.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -124,12 +130,13 @@
             this.btnSubmitShipment.TabIndex = 12;
             this.btnSubmitShipment.Text = "Save";
             this.btnSubmitShipment.UseVisualStyleBackColor = false;
+            this.btnSubmitShipment.Click += new System.EventHandler(this.btnSubmitShipment_Click);
             // 
             // lblShipmentConsignment
             // 
             this.lblShipmentConsignment.AutoSize = true;
             this.lblShipmentConsignment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShipmentConsignment.Location = new System.Drawing.Point(29, 342);
+            this.lblShipmentConsignment.Location = new System.Drawing.Point(29, 386);
             this.lblShipmentConsignment.Name = "lblShipmentConsignment";
             this.lblShipmentConsignment.Size = new System.Drawing.Size(152, 18);
             this.lblShipmentConsignment.TabIndex = 11;
@@ -138,14 +145,21 @@
             // cmbShipmentConsignment
             // 
             this.cmbShipmentConsignment.FormattingEnabled = true;
-            this.cmbShipmentConsignment.Location = new System.Drawing.Point(32, 372);
+            this.cmbShipmentConsignment.Items.AddRange(new object[] {
+            "CNSMNT001",
+            "CNSMNT002",
+            "CNSMNT003",
+            "CNSMNT004",
+            "CNSMNT005"});
+            this.cmbShipmentConsignment.Location = new System.Drawing.Point(32, 416);
             this.cmbShipmentConsignment.Name = "cmbShipmentConsignment";
             this.cmbShipmentConsignment.Size = new System.Drawing.Size(345, 24);
             this.cmbShipmentConsignment.TabIndex = 10;
+            this.cmbShipmentConsignment.SelectedValueChanged += new System.EventHandler(this.cmbShipmentConsignment_SelectedValueChanged);
             // 
             // txtShipmentDesc
             // 
-            this.txtShipmentDesc.Location = new System.Drawing.Point(32, 291);
+            this.txtShipmentDesc.Location = new System.Drawing.Point(32, 335);
             this.txtShipmentDesc.Name = "txtShipmentDesc";
             this.txtShipmentDesc.Size = new System.Drawing.Size(345, 22);
             this.txtShipmentDesc.TabIndex = 8;
@@ -154,7 +168,7 @@
             // 
             this.lblShipmentDesc.AutoSize = true;
             this.lblShipmentDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShipmentDesc.Location = new System.Drawing.Point(29, 257);
+            this.lblShipmentDesc.Location = new System.Drawing.Point(29, 301);
             this.lblShipmentDesc.Name = "lblShipmentDesc";
             this.lblShipmentDesc.Size = new System.Drawing.Size(169, 18);
             this.lblShipmentDesc.TabIndex = 7;
@@ -173,9 +187,11 @@
             this.btnAddProductId.TabIndex = 6;
             this.btnAddProductId.Text = "Add";
             this.btnAddProductId.UseVisualStyleBackColor = false;
+            this.btnAddProductId.Click += new System.EventHandler(this.btnAddProductId_Click);
             // 
             // txtProductIdAssigned
             // 
+            this.txtProductIdAssigned.Enabled = false;
             this.txtProductIdAssigned.Location = new System.Drawing.Point(32, 220);
             this.txtProductIdAssigned.Name = "txtProductIdAssigned";
             this.txtProductIdAssigned.Size = new System.Drawing.Size(221, 22);
@@ -204,6 +220,7 @@
             this.tbtnSearchProduct.TabIndex = 3;
             this.tbtnSearchProduct.Text = "Search";
             this.tbtnSearchProduct.UseVisualStyleBackColor = false;
+            this.tbtnSearchProduct.Click += new System.EventHandler(this.tbtnSearchProduct_Click);
             // 
             // txtSearchProductId
             // 
@@ -244,6 +261,23 @@
             this.btnCreateShipment.Text = "Create Shipment";
             this.btnCreateShipment.UseVisualStyleBackColor = false;
             this.btnCreateShipment.Click += new System.EventHandler(this.btnCreateShipment_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(30, 266);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(134, 18);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Product Quantity";
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Location = new System.Drawing.Point(170, 266);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(83, 22);
+            this.txtQuantity.TabIndex = 14;
             // 
             // ManageShipment
             // 
@@ -286,5 +320,7 @@
         private System.Windows.Forms.Label lblShipmentConsignment;
         private System.Windows.Forms.Button btnSubmitShipment;
         private System.Windows.Forms.Button btnCreateShipment;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtQuantity;
     }
 }
