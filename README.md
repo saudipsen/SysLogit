@@ -60,7 +60,7 @@ The application uses SQL Server with the following default connection string in 
 ```xml
 <connectionStrings>
     <add name="ShipmentDb"
-         connectionString="Server=LAPTOP-EAQ3VI5G\SQLEXPRESS;Database=logistic_dev;Uid=admin;Pwd=@dmin25;"
+         connectionString="Server=LAPTOP-EAQ3VI5G\SQLEXPRESS;Database=logistic_dev;Uid=<provide user id>;Pwd=<provide password>;"
          providerName="System.Data.SqlClient" />
 </connectionStrings>
 ```
@@ -171,7 +171,7 @@ The application implements a centralized error handling system with:
 - Dashboard with analytics
 
 ## License
-[Specify your license here]
+NA
 
 ## Contact
-[Your contact information]
+Saudip Sen
