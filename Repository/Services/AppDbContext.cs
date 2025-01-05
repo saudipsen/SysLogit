@@ -14,8 +14,8 @@ namespace SysLogit.Repository.Services
     {
         public AppDbContext() : base("name=ShipmentDb") { }
 
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Shipment> Shipments { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Shipment> Shipments { get; set; }
     }
 
 }
