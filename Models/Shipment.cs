@@ -17,6 +17,8 @@ namespace SysLogit.Models
         public string ConsignmentId { get; set; }
 
         public virtual Product Product { get; set; }
+
+        public int ProductQnty { get; set; }
     }
 
 }

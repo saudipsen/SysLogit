@@ -20,7 +20,7 @@ namespace SysLogit.UI
         public ManageInventory(IProductService productService)
         {
             InitializeComponent();
-            _productService = productService ?? throw new ArgumentNullException(nameof(productService)); ;
+            _productService = productService ?? throw new ArgumentNullException(nameof(productService)); 
         }
 
         private void btnProductAdd_Click(object sender, EventArgs e)
