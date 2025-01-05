@@ -55,7 +55,7 @@
             this.toolStripMenuMain});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(873, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(873, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -65,20 +65,20 @@
             this.viewProductsToolStripMenuItem,
             this.manageShipmentsToolStripMenuItem});
             this.toolStripMenuMain.Name = "toolStripMenuMain";
-            this.toolStripMenuMain.Size = new System.Drawing.Size(60, 24);
+            this.toolStripMenuMain.Size = new System.Drawing.Size(60, 26);
             this.toolStripMenuMain.Text = "Menu";
             // 
             // viewProductsToolStripMenuItem
             // 
             this.viewProductsToolStripMenuItem.Name = "viewProductsToolStripMenuItem";
-            this.viewProductsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.viewProductsToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
             this.viewProductsToolStripMenuItem.Text = "View Products";
             this.viewProductsToolStripMenuItem.Click += new System.EventHandler(this.viewProductsToolStripMenuItem_Click);
             // 
             // manageShipmentsToolStripMenuItem
             // 
             this.manageShipmentsToolStripMenuItem.Name = "manageShipmentsToolStripMenuItem";
-            this.manageShipmentsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.manageShipmentsToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
             this.manageShipmentsToolStripMenuItem.Text = "Manage Shipments";
             this.manageShipmentsToolStripMenuItem.Click += new System.EventHandler(this.manageShipmentsToolStripMenuItem_Click);
             // 
@@ -154,10 +154,10 @@
             this.tabUserDashboard.Controls.Add(this.tabPage2);
             this.tabUserDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabUserDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabUserDashboard.Location = new System.Drawing.Point(0, 28);
+            this.tabUserDashboard.Location = new System.Drawing.Point(0, 30);
             this.tabUserDashboard.Name = "tabUserDashboard";
             this.tabUserDashboard.SelectedIndex = 0;
-            this.tabUserDashboard.Size = new System.Drawing.Size(873, 571);
+            this.tabUserDashboard.Size = new System.Drawing.Size(873, 569);
             this.tabUserDashboard.TabIndex = 5;
             // 
             // tabPageUserProfile
@@ -169,7 +169,7 @@
             this.tabPageUserProfile.Location = new System.Drawing.Point(4, 29);
             this.tabPageUserProfile.Name = "tabPageUserProfile";
             this.tabPageUserProfile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageUserProfile.Size = new System.Drawing.Size(865, 538);
+            this.tabPageUserProfile.Size = new System.Drawing.Size(865, 536);
             this.tabPageUserProfile.TabIndex = 0;
             this.tabPageUserProfile.Text = "User Profile";
             this.tabPageUserProfile.UseVisualStyleBackColor = true;
