@@ -7,16 +7,19 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace SysLogit.UI
 {
     public partial class ManageInventory : Form
     {
         private readonly IProductService _productService;
+        
         public ManageInventory(IProductService productService)
         {
             InitializeComponent();
@@ -49,6 +52,7 @@ namespace SysLogit.UI
                 {
                     // Bind the data to the DataGridView
                     dgInventory.DataSource = response.Data.ToList();
+                    
                 }
                 else
                 {
@@ -152,7 +156,7 @@ namespace SysLogit.UI
         {
            btnProductUpdate.Enabled= true;
             try
-            {
+            { 
                 var productsToUpdate = new Product()
                 {
                     ProductId = int.TryParse(txtProductId.Text, out var id) ? id : 0,
@@ -272,6 +276,52 @@ namespace SysLogit.UI
                 MessageBox.Show("Please select a product to update.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 panelProductEntry.Visible = false;
             }
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            GenerateReports generateReports = new GenerateReports();
+            if (dgInventory.Rows.Count > 0)
+            {
+                try
+                {
+                    // Check if there is data in the DataGridView
+                    if (dgInventory.Rows.Count == 0)
+                    {
+                        MessageBox.Show("No data available to export.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+                    // Create a SaveFileDialog to specify the file name and path
+                    using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+                    {
+                        saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx";
+                        saveFileDialog.Title = "Save Excel File";
+                        saveFileDialog.FileName = "InventoryReport_" + DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss", CultureInfo.InvariantCulture);
+
+                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            // Generate the Excel file
+                            generateReports.GenerateExcelFile(saveFileDialog.FileName, dgInventory);
+                            MessageBox.Show("Excel file saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred while exporting data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("There is no data to Export. Please load data in the grid!");
+            }
+            
+        }
+
+        private void dgInventory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

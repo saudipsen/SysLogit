@@ -55,7 +55,7 @@
             this.toolStripMenuMain});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(873, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(873, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -154,10 +154,10 @@
             this.tabUserDashboard.Controls.Add(this.tabPage2);
             this.tabUserDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabUserDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabUserDashboard.Location = new System.Drawing.Point(0, 30);
+            this.tabUserDashboard.Location = new System.Drawing.Point(0, 28);
             this.tabUserDashboard.Name = "tabUserDashboard";
             this.tabUserDashboard.SelectedIndex = 0;
-            this.tabUserDashboard.Size = new System.Drawing.Size(873, 569);
+            this.tabUserDashboard.Size = new System.Drawing.Size(873, 571);
             this.tabUserDashboard.TabIndex = 5;
             // 
             // tabPageUserProfile
@@ -169,7 +169,7 @@
             this.tabPageUserProfile.Location = new System.Drawing.Point(4, 29);
             this.tabPageUserProfile.Name = "tabPageUserProfile";
             this.tabPageUserProfile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageUserProfile.Size = new System.Drawing.Size(865, 536);
+            this.tabPageUserProfile.Size = new System.Drawing.Size(865, 538);
             this.tabPageUserProfile.TabIndex = 0;
             this.tabPageUserProfile.Text = "User Profile";
             this.tabPageUserProfile.UseVisualStyleBackColor = true;
@@ -182,7 +182,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(865, 538);
+            this.tabPage2.Size = new System.Drawing.Size(865, 536);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Settings";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -196,7 +196,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
-            this.Text = "SysLogit";
+            this.Text = "SysLogit Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

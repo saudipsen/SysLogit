@@ -36,14 +36,15 @@
             this.btnProductUpdate = new System.Windows.Forms.Button();
             this.btnProductDelete = new System.Windows.Forms.Button();
             this.panelProductEntry = new System.Windows.Forms.Panel();
+            this.txtProductId = new System.Windows.Forms.TextBox();
+            this.lblProductId = new System.Windows.Forms.Label();
             this.btnProductSave = new System.Windows.Forms.Button();
             this.txtProductPrice = new System.Windows.Forms.TextBox();
             this.lblProductPrice = new System.Windows.Forms.Label();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.lblProductName = new System.Windows.Forms.Label();
             this.btnProductLoadData = new System.Windows.Forms.Button();
-            this.lblProductId = new System.Windows.Forms.Label();
-            this.txtProductId = new System.Windows.Forms.TextBox();
+            this.btnExport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgInventory)).BeginInit();
             this.panelProductEntry.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +58,7 @@
             this.dgInventory.RowTemplate.Height = 24;
             this.dgInventory.Size = new System.Drawing.Size(817, 541);
             this.dgInventory.TabIndex = 0;
+            this.dgInventory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgInventory_CellContentClick);
             // 
             // lblProductSearch
             // 
@@ -82,7 +84,7 @@
             this.btnProductSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductSearch.Location = new System.Drawing.Point(530, 122);
             this.btnProductSearch.Name = "btnProductSearch";
-            this.btnProductSearch.Size = new System.Drawing.Size(202, 38);
+            this.btnProductSearch.Size = new System.Drawing.Size(150, 43);
             this.btnProductSearch.TabIndex = 3;
             this.btnProductSearch.Text = "Search";
             this.btnProductSearch.UseVisualStyleBackColor = true;
@@ -141,6 +143,24 @@
             this.panelProductEntry.Size = new System.Drawing.Size(375, 288);
             this.panelProductEntry.TabIndex = 8;
             this.panelProductEntry.Visible = false;
+            // 
+            // txtProductId
+            // 
+            this.txtProductId.Enabled = false;
+            this.txtProductId.Location = new System.Drawing.Point(137, 37);
+            this.txtProductId.Name = "txtProductId";
+            this.txtProductId.Size = new System.Drawing.Size(207, 22);
+            this.txtProductId.TabIndex = 10;
+            // 
+            // lblProductId
+            // 
+            this.lblProductId.AutoSize = true;
+            this.lblProductId.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductId.Location = new System.Drawing.Point(11, 43);
+            this.lblProductId.Name = "lblProductId";
+            this.lblProductId.Size = new System.Drawing.Size(77, 16);
+            this.lblProductId.TabIndex = 9;
+            this.lblProductId.Text = "Product Id";
             // 
             // btnProductSave
             // 
@@ -206,29 +226,24 @@
             this.btnProductLoadData.UseVisualStyleBackColor = false;
             this.btnProductLoadData.Click += new System.EventHandler(this.btnProductLoadData_Click);
             // 
-            // lblProductId
+            // btnExport
             // 
-            this.lblProductId.AutoSize = true;
-            this.lblProductId.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductId.Location = new System.Drawing.Point(11, 43);
-            this.lblProductId.Name = "lblProductId";
-            this.lblProductId.Size = new System.Drawing.Size(77, 16);
-            this.lblProductId.TabIndex = 9;
-            this.lblProductId.Text = "Product Id";
-            // 
-            // txtProductId
-            // 
-            this.txtProductId.Enabled = false;
-            this.txtProductId.Location = new System.Drawing.Point(137, 37);
-            this.txtProductId.Name = "txtProductId";
-            this.txtProductId.Size = new System.Drawing.Size(207, 22);
-            this.txtProductId.TabIndex = 10;
+            this.btnExport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.Location = new System.Drawing.Point(696, 122);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(150, 43);
+            this.btnExport.TabIndex = 10;
+            this.btnExport.Text = "Export";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // ManageInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1326, 749);
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnProductLoadData);
             this.Controls.Add(this.panelProductEntry);
             this.Controls.Add(this.btnProductDelete);
@@ -267,5 +282,6 @@
         private System.Windows.Forms.Button btnProductLoadData;
         private System.Windows.Forms.TextBox txtProductId;
         private System.Windows.Forms.Label lblProductId;
+        private System.Windows.Forms.Button btnExport;
     }
 }
